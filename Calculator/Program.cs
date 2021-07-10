@@ -24,20 +24,47 @@ namespace Calculator
 
             string fullInput = "";
             char[] delimiterChars = { ' ', '+', '-', '*', '/' };
+            decimal number = 0;
             
 
             Console.WriteLine("Enter what you would like to see added.");
-            fullInput = Console.ReadLine();
+/*            fullInput = Console.ReadLine();
 
-            string[] inputs = fullInput.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
+            string[] inputs = fullInput.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);*/
 
-            Console.WriteLine(fullInput);
-            foreach (var input in inputs)
+         
+/*            foreach (var input in inputs)
             {
                 Console.WriteLine(input);
-            }
-            Console.WriteLine(inputs);
-            Console.ReadLine();
+            }*/
+           
+            do
+            {
+                Console.WriteLine("Enter what you would like to see added.");
+                fullInput = Console.ReadLine();
+                string[] inputs = fullInput.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var input in inputs)
+                {
+                    {
+                        if (decimal.TryParse(input, out number) == true)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine(fullInput + " is not a valid expression.");
+                        }
+                    } while (decimal.TryParse(input, out number) == false) ;
+                }
+
+
+
+
+/*            Console.WriteLine(inputs[0]);
+            Console.WriteLine(inputs[1]);
+            Console.ReadLine();*/
+
+
 
 
             do
