@@ -18,7 +18,28 @@ namespace Calculator
 
             Console.WriteLine("A Console Calculator");
 
-          
+
+
+
+
+            string fullInput = "";
+            char[] delimiterChars = { ' ', '+', '-', '*', '/' };
+            
+
+            Console.WriteLine("Enter what you would like to see added.");
+            fullInput = Console.ReadLine();
+
+            string[] inputs = fullInput.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
+
+            Console.WriteLine(fullInput);
+            foreach (var input in inputs)
+            {
+                Console.WriteLine(input);
+            }
+            Console.WriteLine(inputs);
+            Console.ReadLine();
+
+
             do
             {
                 Console.WriteLine("Enter a number.");
